@@ -19,11 +19,6 @@ var originalArray = generateArray(userArrayLength!)
 print("Исходный массив: \(originalArray)")
 print("Новый массив: \(rewriteArray(array: originalArray, length: userArrayLength!))")
 
-// task 3
-print("Введите число (n <= 1000)")
-let userNumber = Int(readLine()!)
-print(printNumbersInWords(number: userNumber!))
-
 // task 4
 print("Введите число (n <=100)")
 let userFactorial = UInt(readLine()!)
@@ -74,24 +69,6 @@ func rewriteArray(array: [Int], length: Int) -> [Int] {
 
 func generateArray (_ n: Int) -> [Int] {
     return (0..<n).map { _ in .random(in: -20...20) }
-}
-
-func printNumbersInWords(number: Int) -> String {
-    var userNumber = number
-    var result = ""
-    
-    let hundredsDict = ["сто", "двести", "триста", "четыреста", "пятьсот", "шестьсот", "семьсот", "восемьсот", "девятьсот"]
-    let onesDict = ["один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "", "одиннадцать", "двенадцать", "дринадцать", "четырнадцать", "пятнадцать", "шестнадцать", "семнадцать", "восемнадцать", "девятнадцать"]
-    let tensDict = ["десять", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдясят", "девяносто"]
-    
-    if userNumber > 1000 {
-        result = "Число больше 1000"
-    }
-    
-    if userNumber == 1000 {
-        result = "Тысяча"
-    }
-    return result
 }
 
 func factorial(_ n: UInt) -> UInt {
